@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding: 1rem;
+  background: #ffffff;
+  font-family: "Rubik", sans-serif;
+}
+
+.dashboard {
+  /* background-color: rgb(253, 0, 0); */
+}
+
+nav {
+  text-align: right;
+}
+
+nav button,
+button {
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+h1,
+h4 {
+  text-align: center;
+}
+form {
+  text-align: center;
+  padding: 1rem;
+}

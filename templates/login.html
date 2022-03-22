@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/script.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+          {% for message in messages %}  
+               <p>{{ message }}</p>  
+          {% endfor %}  
+        {% endif %}  
+    {% endwith %}   -->
+    
+  <section>
+    
+    <div class="nav">
+      <button class='ui button' type="submit"><a href='/'>Home</a></button>
+      <button class='ui button' type="submit"><a href='/sign_up'>Sign UP</a></button>
+    </div>
+    <h1 style='color:white'> Enter your login details</h1>
+            
+            <form method="POST">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="username" placeholder="Username" style="border-radius: 7.5px">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" name="password" placeholder="Password" style="border-radius: 7.5px">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <p style="color: crimson; text-align: center;">{{info}}</p>
+              <div class="field">
+                <p class="control_login">
+                  <button type="submit" class="button is-large">
+                    Login
+                  </button>
+                </p>
+              </div>
+            </form>
+            
+          
+        
+  </section>
+</body>
+
+</html>

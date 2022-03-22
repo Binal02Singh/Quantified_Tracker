@@ -1,0 +1,30 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Trackers</title>
+</head> -->
+{% extends 'base.html' %} {% block head %}
+
+<h1> Quantified Self </h1>
+
+{% endblock %} {% block body %}
+<div class="ui container">
+<!-- <body> -->
+    <button class="ui  button" type="submit"><a href='/logout'>Logout</a></button>
+    
+    {% for tracker in new_tracker %}
+    <h3>{{ tracker.name }}</h3>
+    <h3>Description</h3>
+    <p>{{tracker.description}}</p>
+    <a href="/data/{{ tracker.id }}/update" type="button">Update</a>
+    <a href="/data/{{ tracker.id }}/delete" type="button">Delete</a>
+    <hr> {% endfor %}
+</div>
+{% endblock %} 
+<!-- </body>
+
+</html> -->

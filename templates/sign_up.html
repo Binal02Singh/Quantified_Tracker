@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+          {% for message in messages %}  
+               <p>{{ message }}</p>  
+          {% endfor %}  
+        {% endif %}  
+    {% endwith %}   -->
+  
+  <section class="sign">
+
+    <div nav>
+      <button class="ui  button" type="submit"><a href='/'>Home</a></button>
+        <button class="ui  button" type="submit"><a href='/login'>Login</a></button>
+    </div>
+    <h1 style='color: white;'> Register Yourself</h1>
+            <form action="/sign_up" method="POST" id="create-form">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="name" placeholder="Enter your name here..">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="username" placeholder="Create a Username">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" name="password" placeholder="Create a Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <label for="question" class="label">Sequrity Question</label>
+                <div class="control has-icons-left has-icons-right">
+                    <select name = "dropdown">
+                        <option value = "What is your favourite colour ?">What is your favourite colour ?</option>
+                        <option value = "Whom you met first in college?">Whom you met first in college?</option>
+                        <option value = "What is Your street name?">What is Your street name?</option>
+                    </select>
+                    <br>
+                        <input type="text" name="content" id="content" placeholder="Enter your answer">
+                  
+                </div>
+              </div>
+              <p style="color: crimson; text-align: center;">{{info}}</p>
+              <div class="field">
+                <p class="control_register">
+                  <button type="submit" class="button">
+                    Sign Up
+                  </button>
+                </p>
+              </div>
+            </form>
+          
+  </section>
+</body>
+
+</html>

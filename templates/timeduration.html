@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<h1> Time Duration Tracker </h1>
+
+{% endblock %}
+
+{% block body %}
+
+<h2> Log it here. </h2>
+<form method="POST", action="/timeduration_tracker">
+    <label>Time Duration Value:</label>
+    <input type="text" id="value" name="_value_"> <br><br>
+    <label>Note:</label>
+    <textarea id="note" name="_note_"> </textarea> <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+{{ str }}
+<div>
+    {%if tracks|length <1 %}
+    <h4 style="text-align:center">There are no tarkers.Select one below!!</h4>
+    {%else%}
+    <div style="text-align: center;">
+        
+        <table style="text-align: center;">
+            <tr>
+                <th style="text-align:center">Log</th>
+                <th style="text-align:center">Last Tracked</th>
+                <th style="text-align:center">Add</th>
+                <th style="text-align:center">Actions</th>
+            </tr>
+            {%for tracker in tracks %}
+            <tr>
+                <td>{{tracker.tracker}}</td>
+                <td>{{tracker.value}}</td>
+                <td>{{tracker.note}}</td>
+                <td>{{tracker.timestamp.time()}}|{{tracker.timestamp.date()}}</td>
+                {%if tracker.tracker_type=='Numeric'%}
+                <td><button type="button"><a href="/numeric_tracker">Add Tracker</a></button></td>
+                {%endif%}
+                <td><a class="ui red button" href="/data/{{tracker.id}}/delete">Delete</a>
+            
+                    <a class="ui green button" href="/update/{{tracker.id}}">Update</a>
+    
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%endif%}
+    </div>
+    </div>
+{% endblock %}

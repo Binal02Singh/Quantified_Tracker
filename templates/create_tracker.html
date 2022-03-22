@@ -1,0 +1,133 @@
+{% extends 'base.html' %} {% block head %}
+
+
+
+{% endblock %} {% block body %}
+
+
+<style>
+  h3{
+    text-align: center;
+  }
+  body{
+    background-color: lightgrey;
+  }
+</style>
+<header class="text-gray-600 body-font">
+  <div
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+  >
+    <a
+      class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+        ></path>
+      </svg>
+      <span class="ml-3 text-xl">Quantified Self</span>
+    </a>
+    <nav
+      class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+    ></nav>
+    <button
+      class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+    >
+      <a href="/{{username}}/dashboard">Home</a>
+    </button>
+  </div>
+  <style>
+    body {
+      background-color: lightgrey;
+    }
+    th,
+    td {
+      padding: 1rem;
+    }
+  </style>
+</header>
+<div class="mt-10 sm:mt-0">
+    <!-- <div class="md:grid md:grid-cols-3 md:gap-6"> -->
+      <div class="">
+      <!-- <div class="md:col-span-1">
+        <div class="px-4 sm:px-0"> -->
+          <h3 class="text-xl font-medium leading-6 text-gray-900">Add Tracker Details</h3>
+          
+        <!-- </div>
+      </div> -->
+      <!-- <div class="mt-5 md:mt-0 md:col-span-2"> -->
+        <div class="w-3/5 mt-5 m-auto">
+        <form action="#" method="POST">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="flex flex-col">
+                <div class="flex p-6 items-center">
+                  <label for="first-name" class="block text-sm font-medium text-gray-700">Tracker name</label>
+                  <input type="text" name="_name_" id="name" class=" mt-1 ml-10 focus:ring-indigo-500 focus:border-indigo-500 block w-2/3 p-1 shadow-md sm:text-sm border border-indigo-300 rounded-md">
+                </div>
+  
+                <div class="flex p-6 items-center">
+                  <label for="email-address" class="block text-sm font-medium text-gray-700">Tracker Description</label>
+                  <input type="text" name="_description_" id="description" class="mt-1 ml-2 focus:ring-indigo-500 focus:border-indigo-500 block w-2/3 m-1 p-1 shadow-md sm:text-sm border border-indigo-300 rounded-md">
+                </div>
+  
+                <div class="flex p-6 items-center">
+                  <label for="country" class="block text-sm font-medium text-gray-700">Tracker Type:</label>
+                  <select id="type" name="_type_" class="mt-1 ml-10 block w-2/3 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 border border-indigo-300 sm:text-sm">
+                    <option>Numeric</option>
+                    <option>Boolean</option>
+                  </select>
+                </div>
+  
+                
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{{ str }}
+<!-- {%if tracks|length <1 %}
+    <h4 style="text-align:center">There are no tarkers.Select one below!!</h4>
+    {%else%}
+    <div style="text-align: center;">
+        
+        <table style="text-align: center;">
+            <tr>
+                <th style="text-align:center">Tracker</th>
+                <th style="text-align:center">Last Tracked</th>
+                <th style="text-align:center">Add</th>
+                <th style="text-align:center">Actions</th>
+            </tr>
+            {%for tracker in tracks %}
+            <tr>
+                <td>{{tracker.id}}{{tracker.name}}</td>
+                <td>{{tracker.date_created.time()}}|{{tracker.date_created.date()}}</td>
+                {%if tracker.tracker_type=='Numeric'%}
+                <td><button type="button"><a href="/numeric_tracker">Add Tracker</a></button></td>
+                {%endif%}
+                <td><a class="ui red button" href="/data/{{tracker.id}}/delete">Delete</a>
+            
+                    <a class="ui green button" href="/update/{{tracker.id}}">Update</a>
+
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%endif%} -->
+    </div>
+{% endblock %}

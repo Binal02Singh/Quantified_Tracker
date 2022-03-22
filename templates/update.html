@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% block head %}
+<title>Update</title>
+<header class="text-gray-600 body-font">
+  <div
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+  >
+    <a
+      class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+        ></path>
+      </svg>
+      <span class="ml-3 text-xl">Quantified Self</span>
+    </a>
+    <nav
+      class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+    ></nav>
+    <button
+      class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+    >
+      <a href="/{{username}}/dashboard">Home</a>
+    </button>
+  </div>
+  <style>
+    body {
+      background-color: lightgrey;
+    }
+    th,
+    td {
+      padding: 1rem;
+    }
+  </style>
+</header>
+<h1 class="text-xl font-medium leading-6 text-gray-900">Quantified Self</h1>
+<br />
+{% endblock %} {% block body %}
+
+<form
+  method="post"
+  ,
+  action="/{{username}}/update/{{trackers.id}}"
+  class="flex flex-col w-5/12 m-auto shadow overflow-hidden sm:rounded-md"
+>
+  <p class="p-5 flex items-center">
+    Tracker Name
+    <input
+      type="text"
+      name="_name_"
+      value="{{ trackers.name }}"
+      class="mt-1 ml-5 focus:ring-indigo-500 focus:border-indigo-500 block w-5/12 m-1 p-1 shadow-md sm:text-sm border border-indigo-300 rounded-md"
+    />
+  </p>
+  <p class="p-5 flex items-center">
+    Description
+    <input
+      type="integer"
+      name="_description_"
+      value="{{ trackers.description }}"
+      class="mt-1 ml-10 focus:ring-indigo-500 focus:border-indigo-500 block w-5/12 m-1 p-1 shadow-md sm:text-sm border border-indigo-300 rounded-md"
+    />
+  </p>
+  <p id="type" name="_type_" class="p-5 flex items-center">
+    Tracker Type: {{ trackers.tracker_type }}
+    <select
+      name=""
+      id=""
+      class="mt-1 ml-10 block w-4/12 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    >
+      <option>Numeric</option>
+      <option>Boolean</option>
+    </select>
+  </p>
+  <br />
+
+  <p>
+    <input
+      type="submit"
+      value="Submit"
+      class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    />
+  </p>
+  <a href="/{{username}}/dashboard" class="text-md p-5">Cancel</a>
+</form>
+
+{% endblock %}
