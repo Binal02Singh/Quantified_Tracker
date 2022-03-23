@@ -2,7 +2,9 @@
 Quantified Self
 </h1>
 
-
+<p align="center">
+  <img src='/static/12.png' align="center" style="width:350px;height:350px;border-radius: 50%;">
+</p>
 <p align="center">
 Quantified Self is a website that gives the user analytical results of its habits, health, mood, work, exersice data and helps the user to manage its daily routine on the base of that analysis. Learn more about working of Quantified Self by reading the documentation below.
 </p>
